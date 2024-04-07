@@ -1,40 +1,83 @@
 import java.util.LinkedList;
+import java.util.Queue;
+
+class User {
+    String name;
+    public User(String nameUser){
+        this.name = nameUser;
+    }
+}
+
 
 class Book {
     String title;
     String author;
     int yearOfPublish;
 
+    Queue<User> waitList;
+
     public Book(String title, String author, int yearOfPublish) {
         this.title = title;
         this.author = author;
         this.yearOfPublish = yearOfPublish;
-    }
+        this.waitList = new LinkedList<>();
 
+    }
     @Override
     public String toString() {
         return this.title + "/" + this.author + "/" + this.yearOfPublish;
-
     }
+
+    public void adduserWaitingList(User userToBeAdded) {
+        this.waitList.add(userToBeAdded);
+    }
+
 }
 public class Main {
+
     public static void main(String[] args) {
-        LinkedList<Book> TestList = new LinkedList<>();
+        LinkedList<Book> testList = new LinkedList<>();
 
-        TestList.add(new Book("BookA", "AuthorA", 1995));
-        TestList.add(new Book("BookB", "AuthorB", 1996));
-        TestList.add(new Book("BookC", "AuthorC", 1997));
-        TestList.add(new Book("BookD", "AuthorD", 1998));
-        TestList.add(new Book("BookE", "AuthorE", 1999));
-        TestList.add(new Book("BookF", "AuthorF", 1995));
-        TestList.add(new Book("BookG", "AuthorG", 1996));
-        TestList.add(new Book("BookH", "AuthorH", 1997));
-        TestList.add(new Book("BookI", "AuthorI", 1998));
-        TestList.add(new Book("BookJ", "AuthorJ", 1999));
+        User student = new User("Nicolas");
+        User user01 = new User("Asdf");
+        User user02 = new User("asdfg");
+        User user03 = new User("asdfgh");
 
-        for (int i = 0; i < TestList.size(); i++) {
-            System.out.println(TestList.get(i).toString());
-        }
+        Book bookA = new Book("BookA", "AuthorA", 1995);
+        Book bookB = new Book("BookB", "AuthorB", 1996);
+        Book bookC = new Book("BookC", "AuthorC", 1997);
+        Book bookD = new Book("BookD", "AuthorD", 1998);
+        Book bookE = new Book("BookE", "AuthorE", 1999);
+        Book bookF = new Book("BookF", "AuthorF", 1995);
+        Book bookG = new Book("BookG", "AuthorG", 1996);
+        Book bookH = new Book("BookH", "AuthorH", 1997);
+        Book bookI = new Book("BookI", "AuthorI", 1998);
+        Book bookJ = new Book("BookJ", "AuthorJ", 1999);
+
+
+        testList.add();
+        testList.add(bookA);
+        testList.add(bookB);
+        testList.add(bookC);
+        testList.add(bookD);
+        testList.add(bookE);
+        testList.add(bookF);
+        testList.add(bookG);
+        testList.add(bookH);
+        testList.add(bookI);
+        testList.add(bookJ);
+
+
+//      implementando a fila
+        bookA.adduserWaitingList(student);
+        bookA.adduserWaitingList(user01);
+        bookA.adduserWaitingList(user02);
+        bookA.adduserWaitingList(user03);
+
+
     }
 }
+
+
+
 
