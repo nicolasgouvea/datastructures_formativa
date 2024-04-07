@@ -1,11 +1,19 @@
 import java.util.LinkedList;
 import java.util.Queue;
+import java.util.Stack;
 
 class User {
     String name;
+    Stack <Book> history;
     public User(String nameUser){
         this.name = nameUser;
+        this.history = new Stack<>();
     }
+
+    public void addBookToHistory(Book bookToBeAdded) {
+        history.push(bookToBeAdded);
+    }
+
 }
 
 
@@ -32,6 +40,14 @@ class Book {
         this.waitList.add(userToBeAdded);
     }
 
+    public void printWaitingList(){
+        System.out.println("Mostrando a lista de espera:");
+        for (User user: this.waitList ) {
+            System.out.println(user.name);
+        }
+
+    }
+
 }
 public class Main {
 
@@ -53,7 +69,7 @@ public class Main {
         Book bookH = new Book("BookH", "AuthorH", 1997);
         Book bookI = new Book("BookI", "AuthorI", 1998);
         Book bookJ = new Book("BookJ", "AuthorJ", 1999);
-        
+
         testList.add(new Book("BookA", "AuthorA", 1995));
         testList.add(new Book("BookB", "AuthorB", 1996));
         testList.add(new Book("BookC", "AuthorC", 1997));
@@ -71,6 +87,18 @@ public class Main {
         bookA.adduserWaitingList(user01);
         bookA.adduserWaitingList(user02);
         bookA.adduserWaitingList(user03);
+
+//      Demonstrando pilha
+        student.addBookToHistory(bookA);
+        student.addBookToHistory(bookB);
+        student.addBookToHistory(bookC);
+        student.addBookToHistory(bookD);
+        student.addBookToHistory(bookE);
+        student.addBookToHistory(bookF);
+        student.addBookToHistory(bookG);
+        student.addBookToHistory(bookH);
+        student.addBookToHistory(bookI);
+        student.addBookToHistory(bookJ);
 
 
     }
