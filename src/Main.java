@@ -53,19 +53,17 @@ public class Main {
         Book bookH = new Book("BookH", "AuthorH", 1997);
         Book bookI = new Book("BookI", "AuthorI", 1998);
         Book bookJ = new Book("BookJ", "AuthorJ", 1999);
-
-
-        testList.add();
-        testList.add(bookA);
-        testList.add(bookB);
-        testList.add(bookC);
-        testList.add(bookD);
-        testList.add(bookE);
-        testList.add(bookF);
-        testList.add(bookG);
-        testList.add(bookH);
-        testList.add(bookI);
-        testList.add(bookJ);
+        
+        testList.add(new Book("BookA", "AuthorA", 1995));
+        testList.add(new Book("BookB", "AuthorB", 1996));
+        testList.add(new Book("BookC", "AuthorC", 1997));
+        testList.add(new Book("BookD", "AuthorD", 1998));
+        testList.add(new Book("BookE", "AuthorE", 1999));
+        testList.add(new Book("BookF", "AuthorF", 1995));
+        testList.add(new Book("BookG", "AuthorG", 1996));
+        testList.add(new Book("BookH", "AuthorH", 1997));
+        testList.add(new Book("BookI", "AuthorI", 1998));
+        testList.add(new Book("BookJ", "AuthorJ", 1999));
 
 
 //      implementando a fila
